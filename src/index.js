@@ -26,7 +26,17 @@ app.listen(3000, async() => {
     //     tweets: ['65b546b36ab8e3ed8f67d0d7']
     // })
 
+    // const tweetRepo =  new TweetRepository();
+    // let tweets = await tweetRepo.getAllTweets();
+    // console.log(tweets);
+
+    // const tweetRepo =  new TweetRepository();
+    //  let tweet = await tweetRepo.getTweets("65b5470fe33d8b3a40dce007");
+    //  console.log(tweet);
+
     const tweetRepo =  new TweetRepository();
-    let tweets = await tweetRepo.getAllTweets();
-    console.log(tweets);
+     let tweet = await tweetRepo.deleteTweets({
+        "_id": "65b5470fe33d8b3a40dce007"
+     });
+     console.log(tweet);
 })

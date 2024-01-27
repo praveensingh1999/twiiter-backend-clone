@@ -23,6 +23,28 @@ export class TweetRepository {
             throw error;
         }
     }
+
+    async getTweets(id)
+    {
+        try {
+            let tweet = await Tweet.findById(id);
+            return tweet;
+        } catch (error) {
+            console.log(error);
+            throw error;
+        }
+    }
+
+    async deleteTweets(data)
+    {
+        try {
+            let tweet = await Tweet.deleteOne(data);
+            return tweet;
+        } catch (error) {
+            console.log(error);
+            throw error;
+        }
+    }
 }
 
 export default TweetRepository;
